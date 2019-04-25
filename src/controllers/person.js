@@ -14,7 +14,7 @@ function savePerson(req, res){
   
             person.save((err, personStored) => {
               if(err){
-                res.status(500).send({message: 'error al guardar'});
+                res.status(500).send({ message: err });
               }else{
                 if(!personStored){
                   res.status(404).send({message: 'no se pudo registrar el usuario'});
