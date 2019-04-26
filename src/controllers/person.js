@@ -38,8 +38,30 @@ function savePerson(req, res){
         });
       }
 
+      function searchPerson(req, res){
+        var params = req.body;
+        Person.find({
+          $or: [
+            {firstName: params.search },
+            {secondName: params.search},
+            {firstSurname: params.search}
+          ]
+        }, (err, results)=>{
+          if(err){
+            res.status(404).send({message: 'Error general'})
+          }else{
+            if(!results){
+              res.status(200).send({message: 'No hay registros'});
+            }else{
+              res.status(200).send({results});
+            }
+          }
+        });
+      }
+
 module.exports = {
     checkPerson,
     savePerson,
-    listPerson
+    listPerson,
+    searchPerson
 }

@@ -12,4 +12,6 @@ api.post('/savePerson', PersonController.savePerson);
 
 api.get('/listPerson', PersonController.listPerson );
 
+api.post('/lookFor', PersonController.searchPerson);
+
 module.exports = api;
