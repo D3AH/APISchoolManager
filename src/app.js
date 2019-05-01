@@ -6,6 +6,7 @@ var bodyParser = require('body-parser');
 var app = express();
 
 var person_routes = require('./routes/person');
+var family_routes = require('./routes/family');
 
 app.use((req, res, next) => {
 	res.header('Access-Control-Allow-Origin', '*');
@@ -19,5 +20,6 @@ app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 
 app.use('/v1', person_routes);
+app.use('/v1', family_routes);
 
 module.exports = app;

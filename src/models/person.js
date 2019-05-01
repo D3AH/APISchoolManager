@@ -19,7 +19,7 @@ const PersonSchema = new mongoose.Schema({
     },
     marriedname: {
         type: String,
-        required: [false, 'The field lastnameMarriedname is required.']
+        required: [false, 'The field Marriedname is required.']
     },
     birthdate: {
         type: String,
