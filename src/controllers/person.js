@@ -39,12 +39,12 @@ function savePerson(req, res){
 
 
       function searchPerson(req, res){
-        var params = req.query;
+        var params = req.body;
         Person.find({
           $or: [
-            {firstName: params },
-            {secondName: params},
-            {firstSurname: params}
+            { 'firstName': params },
+            { 'secondName': params },
+            { 'firstSurname': params }
           ]
         }, (err, results)=>{
           if(err){
