@@ -5,13 +5,14 @@ var PersonController = require('../controllers/person');
 var md_auth = require('../middlewares/authenticated');
 
 var api = express.Router();
-
-api.get('/check', PersonController.checkPerson);
-
-api.post('/savePerson', PersonController.savePerson);
-
-api.get('/listPerson', PersonController.listPerson );
-
-api.post('/searchPerson', PersonController.searchPerson);
+/*
+--GET
+*/
+api.get('/', PersonController.listPerson);
+api.get('/search', PersonController.searchPerson);
+/*
+--POST
+*/
+api.post('/', PersonController.savePerson);
 
 module.exports = api;

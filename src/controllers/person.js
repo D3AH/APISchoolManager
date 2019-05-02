@@ -10,20 +10,19 @@ function checkPerson(req, res){
 
 function savePerson(req, res){
   var params = req.body;
-    var person = new Person(params);
-  
-            person.save((err, personStored) => {
-              if(err){
-                res.status(500).send({ message: err });
+  var person = new Person(params);
+      person.save((err, personStored) => {
+        if(err){
+          res.status(500).send({ message: err });
+          }else{
+            if(!personStored){
+              res.status(404).send({message: 'no se pudo registrar el usuario'});
               }else{
-                if(!personStored){
-                  res.status(404).send({message: 'no se pudo registrar el usuario'});
-                }else{
-                  res.status(200).send({person: personStored});
-                }
+                res.status(200).send({person: personStored});
               }
-            });
-        }
+            }
+        });
+  }
   
       
 
@@ -38,13 +37,14 @@ function savePerson(req, res){
         });
       }
 
+
       function searchPerson(req, res){
-        var params = req.body;
+        var params = req.query;
         Person.find({
           $or: [
-            {firstName: params.search },
-            {secondName: params.search},
-            {firstSurname: params.search}
+            {firstName: params },
+            {secondName: params},
+            {firstSurname: params}
           ]
         }, (err, results)=>{
           if(err){
