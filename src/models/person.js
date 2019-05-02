@@ -70,15 +70,15 @@ const PersonSchema = new mongoose.Schema({
         required: [false, 'The field houseNumber is required.']
     },
     mobileNumber: {
-        type: Number,
+        type: String,
         required: [false, 'The field mobileNumber is required.']
     },
     housePhone: {
-        type: Number,
+        type: String,
         required: [false, 'The field housePhone is required.']
     },
     another: {
-        type: Number,
+        type: String,
         required: [false, 'The field another is required.']
     }
 }, {
