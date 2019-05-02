@@ -39,21 +39,21 @@ function savePerson(req, res){
 
 
       function searchPerson(req, res){
-        var params = req.body;
+        const { firstName, secondName, firstSurname } = req.query;
         Person.find({
           $or: [
-            { 'firstName': params },
-            { 'secondName': params },
-            { 'firstSurname': params }
+            { 'firstName': firstName },
+            { 'secondName': secondName },
+            { 'firstSurname': firstSurname }
           ]
         }, (err, results)=>{
           if(err){
-            res.status(404).send({message: 'Error general'})
+            res.status(404).send({ message: err })
           }else{
             if(!results){
               res.status(200).send({message: 'No hay registros'});
             }else{
-              res.status(200).send({results});
+              res.status(200).send(results);
             }
           }
         });
