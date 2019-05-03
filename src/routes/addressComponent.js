@@ -5,6 +5,9 @@ var AddressComponentController = require('../controllers/addressComponent');
 
 var api = express.Router();
 
-api.post('/', AddressComponentController.saveAddress);
+/**
+ * POST
+ */
+api.post('/', AddressComponentController.saveAddressComponent);
 
 module.exports = api;
