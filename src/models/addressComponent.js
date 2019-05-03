@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const ObjectId = mongoose.Schema.ObjectId;
 
-const AddressSchema = new mongoose.Schema({
+const AddressComponentSchema = new mongoose.Schema({
     name: {
         type: String,
         required: [true, 'The name is required.']
@@ -16,7 +16,7 @@ const AddressSchema = new mongoose.Schema({
         collation: { locale: 'es', strength: 3 }
     });
 
-module.exports = mongoose.model('Address', AddressSchema);
+module.exports = mongoose.model('AddressComponent', AddressComponentSchema);
 
 /**
  * addresComponent

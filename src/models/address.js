@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const ObjectId = mongoose.SchemaType.ObjectId;
+const ObjectId = mongoose.Schema.ObjectId;
 
 const AddressSchema = new mongoose.Schema({
     person: {
