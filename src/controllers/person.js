@@ -10,20 +10,19 @@ function checkPerson(req, res){
 
 function savePerson(req, res){
   var params = req.body;
-    var person = new Person(params);
-  
-            person.save((err, personStored) => {
-              if(err){
-                res.status(500).send({message: 'error al guardar'});
+  var person = new Person(params);
+      person.save((err, personStored) => {
+        if(err){
+          res.status(500).send({ message: err });
+          }else{
+            if(!personStored){
+              res.status(404).send({message: 'no se pudo registrar el usuario'});
               }else{
-                if(!personStored){
-                  res.status(404).send({message: 'no se pudo registrar el usuario'});
-                }else{
-                  res.status(200).send({person: personStored});
-                }
+                res.status(200).send({person: personStored});
               }
-            });
-        }
+            }
+        });
+  }
   
       
 
@@ -38,8 +37,31 @@ function savePerson(req, res){
         });
       }
 
+
+      function searchPerson(req, res){
+        const { firstName, secondName, firstSurname } = req.query;
+        Person.find({
+          $or: [
+            { 'firstName': firstName },
+            { 'secondName': secondName },
+            { 'firstSurname': firstSurname }
+          ]
+        }, (err, results)=>{
+          if(err){
+            res.status(404).send({ message: err })
+          }else{
+            if(!results){
+              res.status(200).send({message: 'No hay registros'});
+            }else{
+              res.status(200).send(results);
+            }
+          }
+        });
+      }
+
 module.exports = {
     checkPerson,
     savePerson,
-    listPerson
+    listPerson,
+    searchPerson
 }

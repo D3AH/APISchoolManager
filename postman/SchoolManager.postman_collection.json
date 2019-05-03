@@ -1,0 +1,164 @@
+{
+	"info": {
+		"_postman_id": "4f259df1-018a-41e8-aa6e-ea4c660aef5b",
+		"name": "SchoolManager",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Person",
+			"item": [
+				{
+					"name": "Add",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "firstName",
+									"value": "Diego",
+									"type": "text"
+								},
+								{
+									"key": "secondName",
+									"value": "Esteban",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{domain}}/person/",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"person",
+								""
+							]
+						},
+						"description": "localhost:4022/v1/person/\t"
+					},
+					"response": []
+				},
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{domain}}/person/",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"person",
+								""
+							]
+						},
+						"description": "localhost:4022/v1/person/"
+					},
+					"response": []
+				},
+				{
+					"name": "Search",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "72028730-a69e-4beb-98d1-c7328d8dd19e",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "firstName",
+									"value": "Diego",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{domain}}/person/search",
+							"host": [
+								"{{domain}}"
+							],
+							"path": [
+								"person",
+								"search"
+							]
+						},
+						"description": "{{domain}}/person\t"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Family",
+			"item": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "ac3f79df-f3ce-4ee3-abe3-9ce07ea1c8f3",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "c95938b7-20b3-4cce-b181-7a015d78c5fe",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "407e9836-f9c7-4b49-a42d-8bbd6450f611",
+			"key": "domain",
+			"value": "localhost:4022/v1",
+			"type": "string"
+		}
+	]
+}

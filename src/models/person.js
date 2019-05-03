@@ -3,79 +3,39 @@ const mongoose = require('mongoose');
 const PersonSchema = new mongoose.Schema({
     firstName: {
         type: String,
-        required: [true, 'The field firstName is required.']
+        required: [false, 'The field firstName is required.']
     },
     secondName: {
         type: String,
-        required: [true, 'The field secondName is required.']
+        required: [false, 'The field secondName is required.']
     },
     firstSurname: {
         type: String,
-        required: [true, 'The field firstSurname is required.']
+        required: [false, 'The field firstSurname is required.']
     },
     lastSurname: {
         type: String,
-        required: [true, 'The field lastSurname is required.']
+        required: [false, 'The field lastSurname is required.']
+    },
+    marriedname: {
+        type: String,
+        required: [false, 'The field Marriedname is required.']
     },
     birthdate: {
         type: String,
-        required: [true, 'The field birthdate is required.']
+        required: [false, 'The field birthdate is required.']
     },
     religion: {
         type: String,
-        required: [true, 'The field religion is required.']
+        required: [false, 'The field religion is required.']
     },
     email: {
         type: String,
-        required: [true, 'The field email is required.']
+        required: [false, 'The field email is required.']
     },
-    gender: {
+    sex: {
         type: String,
-        required: [true, 'The field gender is required.']
-    },
-    department: {
-        type: String,
-        required: [true, 'The field department is required.']
-    },
-    municipality: {
-        type: String,
-        required: [true, 'The field municipality is required.']
-    },
-    zone: {
-        type: String,
-        required: [true, 'The field zone is required.']
-    },
-    neighborhood: {
-        type: String,
-        required: [true, 'The field neighborhood is required.']
-    },
-    avenue: {
-        type: String,
-        required: [true, 'The field avenue is required.']
-    },
-    street: {
-        type: String,
-        required: [true, 'The field street is required.']
-    },
-    area: {
-        type: String,
-        required: [true, 'The field area is required.']
-    },
-    houseNumber: {
-        type: String,
-        required: [true, 'The field houseNumber is required.']
-    },
-    mobileNumber: {
-        type: Number,
-        required: [true, 'The field mobileNumber is required.']
-    },
-    housePhone: {
-        type: Number,
-        required: [true, 'The field housePhone is required.']
-    },
-    another: {
-        type: Number,
-        required: [true, 'The field another is required.']
+        required: [false, 'The field sex is required.']
     }
 }, {
     // Localización: es, Intensidad de coincidencia

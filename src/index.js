@@ -5,7 +5,7 @@ var app = require('./app');
 var port = process.env.PORT || 4022;
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost:27017/Bussiness', {useNewUrlParser: true})
+mongoose.connect('mongodb://localhost:27017/SchoolManager', { useNewUrlParser: true })
 .then((err,res)=>{
     console.log('Swited to Database Engine');
     app.listen(port, () =>{
