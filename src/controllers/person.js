@@ -1,8 +1,6 @@
 'use strict'
 
 var Person = require('../models/person');
-var auth = require('../middlewares/authenticated');
-var jwt = require('../services/jwt');
 
 function checkPerson(req, res){
     res.status(200).send({message:'Open it up'});
@@ -23,8 +21,7 @@ function savePerson(req, res){
             }
         });
   }
-  
-      
+        
 
       function listPerson(req, res){
         Person.find({}, (err, persons) => {
@@ -58,10 +55,26 @@ function savePerson(req, res){
           }
         });
       }
+//
+
+      function getPerson(req, res){
+        var idPerson = req.params.id;
+
+        Person.find({_id:idPerson}, (err, idPerson) => {
+          if (err){
+            console.log(err);
+            res.status(500).send({message: 'no se a podido mostrar a la persona'})
+          }else{
+            res.status(200).send({idPerson});
+          }
+        });
+      }
+      
 
 module.exports = {
     checkPerson,
     savePerson,
     listPerson,
-    searchPerson
+    searchPerson,
+    getPerson
 }

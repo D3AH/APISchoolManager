@@ -10,6 +10,8 @@ var api = express.Router();
 */
 api.get('/', PersonController.listPerson);
 api.get('/search', PersonController.searchPerson);
+api.get('/:id', PersonController.getPerson);
+
 /*
 --POST
 */
