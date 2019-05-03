@@ -7,7 +7,8 @@ var app = express();
 
 var routes = {
 	person: require('./routes/person'),
-	family: require('./routes/family') 	
+	family: require('./routes/family'),
+	phones: require('./routes/phones') 	
 };
 
 app.use((req, res, next) => {
@@ -23,5 +24,6 @@ app.use(bodyParser.json());
 
 app.use('/v1/person', routes.person);
 app.use('/v1/family', routes.family);
+app.use('/v1/phones', routes.phones);
 
 module.exports = app;

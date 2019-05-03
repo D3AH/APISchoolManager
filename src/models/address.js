@@ -16,8 +16,8 @@ const AddressSchema = new mongoose.Schema({
         {
             addressComponent: {
                 type: ObjectId,
-                ref: 'The addressComponent field is required.',
-                required: [true, '']
+                ref: 'addressComponent',
+                required: [true, 'The addressComponent field is required.']
             },
             value: {
                 type: String,
