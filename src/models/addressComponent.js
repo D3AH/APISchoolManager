@@ -10,6 +10,10 @@ const AddressComponentSchema = new mongoose.Schema({
     type: {
         type: String,
         required: [true, 'The type is required (string, integer).']
+    },
+    priority: {
+        type: Number,
+        required: [true, 'The priority is required.']
     }
 }, {
         // Localización: es, Intensidad de coincidencia
