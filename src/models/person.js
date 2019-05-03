@@ -33,53 +33,9 @@ const PersonSchema = new mongoose.Schema({
         type: String,
         required: [false, 'The field email is required.']
     },
-    gender: {
+    sex: {
         type: String,
-        required: [false, 'The field gender is required.']
-    },
-    department: {
-        type: String,
-        required: [false, 'The field department is required.']
-    },
-    municipality: {
-        type: String,
-        required: [false, 'The field municipality is required.']
-    },
-    zone: {
-        type: String,
-        required: [false, 'The field zone is required.']
-    },
-    neighborhood: {
-        type: String,
-        required: [false, 'The field neighborhood is required.']
-    },
-    avenue: {
-        type: String,
-        required: [false, 'The field avenue is required.']
-    },
-    street: {
-        type: String,
-        required: [false, 'The field street is required.']
-    },
-    area: {
-        type: String,
-        required: [false, 'The field area is required.']
-    },
-    houseNumber: {
-        type: String,
-        required: [false, 'The field houseNumber is required.']
-    },
-    mobileNumber: {
-        type: String,
-        required: [false, 'The field mobileNumber is required.']
-    },
-    housePhone: {
-        type: String,
-        required: [false, 'The field housePhone is required.']
-    },
-    another: {
-        type: String,
-        required: [false, 'The field another is required.']
+        required: [false, 'The field sex is required.']
     }
 }, {
     // Localización: es, Intensidad de coincidencia
