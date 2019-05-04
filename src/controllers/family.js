@@ -25,10 +25,10 @@ function saveSons(req, res){
     var son = { son: req.body };
     // { product: '12313123', number: 12 }
 
-    Family.findById(id, (err, UpdateUser) => {
-      UpdateUser.son.push(son);
-      UpdateUser.save().then((productSaved) => {
-        res.status(200).send({productSaved});
+    Family.findById(id, (err, UpdateFamily) => {
+      UpdateFamily.son.push(son);
+      UpdateFamily.save().then((familySaved) => {
+        res.status(200).send({familySaved});
       }).catch((err) => res.status(500).send({ err }));
       
     });
