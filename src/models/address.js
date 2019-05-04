@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const ObjectId = mongoose.SchemaType.ObjectId;
+const ObjectId = mongoose.Schema.ObjectId;
 
 const AddressSchema = new mongoose.Schema({
     person: {
@@ -16,8 +16,8 @@ const AddressSchema = new mongoose.Schema({
         {
             addressComponent: {
                 type: ObjectId,
-                ref: 'The addressComponent field is required.',
-                required: [true, '']
+                ref: 'addressComponent',
+                required: [true, 'The addressComponent field is required.']
             },
             value: {
                 type: String,

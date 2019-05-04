@@ -23,7 +23,6 @@ function saveSons(req, res){
     var id = req.params.id;
     var params = req.body;
     var son = { son: req.body };
-    // { product: '12313123', number: 12 }
 
     Family.findById(id, (err, UpdateFamily) => {
       UpdateFamily.son.push(son);
