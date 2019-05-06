@@ -40,7 +40,7 @@ function listFamilies(req, res){
         }else{
             res.status(200).send({listFamilies});
         }
-    })
+    });
 }
 
 module.exports = {

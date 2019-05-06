@@ -36,6 +36,10 @@ const PersonSchema = new mongoose.Schema({
     sex: {
         type: String,
         required: [false, 'The field sex is required.']
+    },
+    civilStatus: {
+        type: String,
+        required: [false, 'The field civilStatus is required.']
     }
 }, {
     // Localización: es, Intensidad de coincidencia

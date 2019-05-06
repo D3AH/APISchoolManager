@@ -2,7 +2,7 @@
 
 var AddressComponent = require('../models/addressComponent');
 
-function saveAddressComponent(req, res){
+function saveAddressComponent(req, res) {
     var params = req.body;
     var addressComponent = new AddressComponent(params);
 
@@ -15,6 +15,17 @@ function saveAddressComponent(req, res){
     })
 }
 
+function listAddressComponets(req, res) {
+    AddressComponent.find({}, (err, addressComponents) => {
+        if(err){
+            res.status(200).send({ message: err });
+        }else{
+            res.status(200).send({ addressComponents });
+        }
+    })
+}
+
 module.exports = {
-    saveAddressComponent
+    saveAddressComponent,
+    listAddressComponets
 }

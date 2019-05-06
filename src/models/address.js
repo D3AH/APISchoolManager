@@ -12,6 +12,15 @@ const AddressSchema = new mongoose.Schema({
         type: String,
         required: false
     },
+
+    departamento: String,
+    municipio: String,
+    zone: String,
+    avenue: String,
+    street: String,
+    number: String,
+    level: String,
+
     components: [
         {
             addressComponent: {
