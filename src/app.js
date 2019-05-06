@@ -24,10 +24,10 @@ app.use((req, res, next) => {
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json());
 
-app.use('/v1/person', routes.person);
-app.use('/v1/family', routes.family);
-app.use('/v1/address', routes.address);
-app.use('/v1/addressComponent', routes.addressComponent);
+app.use('/v1/persons', routes.person);
+app.use('/v1/families', routes.family);
+app.use('/v1/addresses', routes.address);
+app.use('/v1/addressComponents', routes.addressComponent);
 app.use('/v1/phones', routes.phones);
 
 module.exports = app;
