@@ -9,6 +9,6 @@ api.post('/', FamilyController.saveFamily);
 
 api.put('/:id', FamilyController.saveSons);
 
-api.get('/listFamilies', FamilyController.listFamilies);
+api.get('/', FamilyController.listFamilies);
 
 module.exports = api;

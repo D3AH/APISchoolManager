@@ -35,11 +35,9 @@ function saveSons(req, res){
 
 function listFamilies(req, res){
     Family.find({}, (err, listFamilies) => {
-        if(err){
-            res.status(200).send({message:error});
-        }else{
-            res.status(200).send({listFamilies});
-        }
+        res.status(200).send({ families: listFamilies });
+    }).catch((err) => {
+        res.status(500).send({ message: err });
     });
 }
 
