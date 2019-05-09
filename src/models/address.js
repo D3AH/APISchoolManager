@@ -20,6 +20,10 @@ const AddressSchema = new mongoose.Schema({
     street: String,
     number: String,
     level: String,
+    colonia: String,
+    sector: String,
+    cuadra: String,
+    edificio: String,
 
     components: [
         {

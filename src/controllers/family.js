@@ -15,7 +15,7 @@ function saveParents(req, res){
                     }
                 });
             }else{
-                res.status(200).send({message: 'Please add an foreman and son'})
+                res.status(200).send({message: 'Please add an foreman and son'});
             }
 }
 
