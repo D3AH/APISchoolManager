@@ -7,4 +7,6 @@ var api = express.Router();
 
 api.post('/', AcademicUnityController.saveAcademicUnity);
 
+api.get('/', AcademicUnityController.listAcademicUnity);
+
 module.exports = api;

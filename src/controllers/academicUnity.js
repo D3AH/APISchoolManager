@@ -19,6 +19,17 @@ function saveAcademicUnity(req, res){
     }
 }
 
+function listAcademicUnity(req, res){
+    AcademicUnity.find((err, listAcademy) =>{
+        if(err){
+            res.status(500).send({message: err});
+        }else{
+            res.status(200).send({AcademicUnity: listAcademy})
+        }
+    });
+}
+
 module.exports = {
-    saveAcademicUnity
+    saveAcademicUnity,
+    listAcademicUnity
 }
