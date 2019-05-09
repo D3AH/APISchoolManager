@@ -5,9 +5,9 @@ var FamilyController = require('../controllers/family');
 
 var api = express.Router();
 
-api.post('/saveFamily', FamilyController.saveParents);
+api.post('/', FamilyController.saveFamily);
 
-api.put('/saveSons/:id', FamilyController.saveSons);
+api.put('/:id', FamilyController.saveSons);
 
 api.get('/listFamilies', FamilyController.listFamilies);
 

@@ -2,7 +2,7 @@
 
 var Family = require('../models/family');
 
-function saveParents(req, res){
+function saveFamily(req, res){
     var params = req.body;
     var family = new Family(params);
 
@@ -44,7 +44,7 @@ function listFamilies(req, res){
 }
 
 module.exports = {
-    saveParents,
+    saveFamily,
     saveSons,
     listFamilies
 }
