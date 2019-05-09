@@ -11,7 +11,8 @@ var routes = {
 	address: require('./routes/address'),
 	addressComponent: require('./routes/addressComponent'),
 	phones: require('./routes/phones'),
-	academicUnity: require('./routes/academicUnity')
+	academicUnity: require('./routes/academicUnity'),
+	career: require('./routes/career')
 };
 
 app.use((req, res, next) => {
@@ -31,5 +32,6 @@ app.use('/v1/addresses', routes.address);
 app.use('/v1/addressComponents', routes.addressComponent);
 app.use('/v1/phones', routes.phones);
 app.use('/v1/academicUnity', routes.academicUnity);
+app.use('/v1/career', routes.career);
 
 module.exports = app;
