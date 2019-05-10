@@ -50,7 +50,8 @@ function listNamesFamily(req, res){
 
             res.status(200).send({
                 father,
-                mother
+                mother,
+                id: family._id
             });
         });
     })
