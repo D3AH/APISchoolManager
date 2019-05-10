@@ -45,8 +45,8 @@ function listFamilies(req, res){
 function listNamesFamily(req, res){
     Family.findById(req.params.id ,(err, family) => {
         Person.find({}, (err, persons) => {
-            let father = persons.filter((person) => person._id.toString() == family.father);
-            let mother = persons.filter((person) => person._id.toString() == family.mother);
+            let father = persons.find((person) => person._id.toString() == family.father);
+            let mother = persons.find((person) => person._id.toString() == family.mother);
 
             res.status(200).send({
                 father,

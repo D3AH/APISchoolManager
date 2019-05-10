@@ -46,4 +46,13 @@ const PersonSchema = new mongoose.Schema({
     collation: { locale: 'es', strength: 3 }
 });
 
+PersonSchema.virtual('fullName').get(function () {
+    return this.firstName + ' ' + this.firstSurname;
+});
+
+// Ensure virtual fields are serialised.
+PersonSchema.set('toJSON', {
+    virtuals: true
+});
+
 module.exports = mongoose.model('Person', PersonSchema);

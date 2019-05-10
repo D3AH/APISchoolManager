@@ -12,10 +12,10 @@ const CarrerSchema = new mongoose.Schema({
         required: false
     },
     description: 
-        {
-            type: String,
-            required: false
-        }
+    {
+        type: String,
+        required: false
+    }
 });
 
 module.exports = mongoose.model('Carrer', CarrerSchema);
