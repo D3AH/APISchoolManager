@@ -7,7 +7,7 @@ var api = express.Router();
 
 api.post('/', FamilyController.saveFamily);
 
-api.put('/:id', FamilyController.saveSons);
+api.put('/:id/addSon/:son', FamilyController.addSon);
 
 api.get('/', FamilyController.listFamilies);
 
