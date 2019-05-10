@@ -10,7 +10,8 @@ var routes = {
 	family: require('./routes/family'),
 	address: require('./routes/address'),
 	addressComponent: require('./routes/addressComponent'),
-	phones: require('./routes/phones')
+	phones: require('./routes/phones'),
+	academicUnity: require('./routes/academicUnity')
 };
 
 app.use((req, res, next) => {
@@ -29,5 +30,6 @@ app.use('/v1/families', routes.family);
 app.use('/v1/addresses', routes.address);
 app.use('/v1/addressComponents', routes.addressComponent);
 app.use('/v1/phones', routes.phones);
+app.use('/v1/academicUnity', routes.academicUnity);
 
 module.exports = app;
