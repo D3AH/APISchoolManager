@@ -34,6 +34,6 @@ app.use('/v1/addressComponents', routes.addressComponent);
 app.use('/v1/phones', routes.phones);
 app.use('/v1/academicUnity', routes.academicUnity);
 app.use('/v1/career', routes.career);
-app.use('/v1/course', routes.course);
+app.use('/v1/courses', routes.course);
 
 module.exports = app;
