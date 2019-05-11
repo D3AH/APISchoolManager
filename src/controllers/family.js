@@ -1,6 +1,7 @@
 'use strict'
 
-var Family = require('../models/family');
+const Family = require('../models/family');
+const Person = require('../models/person');
 
 function saveFamily(req, res){
     var params = req.body;
@@ -38,8 +39,29 @@ function listFamilies(req, res){
     });
 }
 
+/**
+ * @TODO ARREGLAR ESTO! PLS
+ */
+function listNamesFamily(req, res){
+    Family.findById(req.params.id ,(err, family) => {
+        Person.find({}, (err, persons) => {
+            let father = persons.filter((person) => person._id.toString() == family.father);
+            let mother = persons.filter((person) => person._id.toString() == family.mother);
+
+            res.status(200).send({
+                father,
+                mother
+            });
+        });
+    })
+    .catch((err) => {
+        res.status(500).send({ message: err });
+    });
+}
+
 module.exports = {
     saveFamily,
     addSon,
-    listFamilies
+    listFamilies,
+    listNamesFamily
 }

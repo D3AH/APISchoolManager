@@ -11,4 +11,6 @@ api.put('/:id/addSon/:son', FamilyController.addSon);
 
 api.get('/', FamilyController.listFamilies);
 
+api.get('/:id/names', FamilyController.listNamesFamily);
+
 module.exports = api;
