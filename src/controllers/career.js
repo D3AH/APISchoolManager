@@ -8,8 +8,7 @@ function saveCareer(req, res){
     Career.findOne({
       $or: [
         { code:params.code }, 
-        { name:params.name }, 
-        { description:params.description } 
+        { name:params.name } 
       ]}, (err, careerFound) => {
         if(careerFound){
           res.status(500).send({message: 'There is already a record with those features!'})
