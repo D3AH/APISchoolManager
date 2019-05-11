@@ -6,13 +6,26 @@ function saveCourse(req, res){
     var params = req.body;
     var course = new Course(params);
 
-    course.save((err, saveCourse) => {
+    Course.findOne({$or: [{code:params.code},  {name:params.name}] }, (err, courseFound) => {
         if(err){
             res.status(500).send({message: err});
         }else{
-            res.status(200).send({course: saveCourse});
+            if(!courseFound){
+                course.save((err, saveCourse) => {
+                    if(err){
+                        res.status(500).send({message: err});
+                    }else{
+                        res.status(200).send({course: saveCourse});
+                    }
+                }); 
+               
+            }else{
+                res.status(500).send({
+                    message: 'The course you are trying to add is on the system already!'
+                }); 
+            }       
         }
-    });
+    }); 
 }
 
 function listCourse(req, res){
