@@ -5,8 +5,14 @@ var CourseController = require('../controllers/course');
 
 var api = express.Router();
 
-api.post('/', CourseController.saveCourse);
-
+/**
+ * GET
+ */
 api.get('/', CourseController.listCourse);
+
+/**
+ * POST
+ */
+api.post('/', CourseController.saveCourse);
 
 module.exports = api;
