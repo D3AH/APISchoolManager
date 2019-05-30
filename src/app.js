@@ -37,7 +37,7 @@ app.use('/v1/phones', routes.phones);
 app.use('/v1/academicUnity', routes.academicUnity);
 app.use('/v1/careers', routes.career);
 app.use('/v1/courses', routes.course);
-app.use('/v1/network', routes.network);
+app.use('/v1/networks', routes.network);
 app.use('/v1/teacher', routes.teacher);
 
 module.exports = app;
