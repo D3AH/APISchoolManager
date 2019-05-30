@@ -9,9 +9,6 @@ var api = express.Router();
  * GET
  */
 api.get('/', NetworkController.listNetwork);
-
-
-
 api.get('/:id', NetworkController.searchClasses);
 
 /**
@@ -22,7 +19,6 @@ api.post('/', NetworkController.saveNetwork);
 /** 
  * ARRAY
 */
-
-api.put('/:id/addNetwork/:son', NetworkController.addClasses);
+api.put('/:id/addNetwork/:course', NetworkController.addClasses);
 
 module.exports = api;

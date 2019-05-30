@@ -3,6 +3,10 @@ const mongoose = require('mongoose');
 const ObjectId = mongoose.Schema.ObjectId;
 
 const NetworkSchema = new mongoose.Schema({
+    career: {
+        type: ObjectId,
+        required: true
+    },
     courses: [
         {
             type: ObjectId,
@@ -10,6 +14,14 @@ const NetworkSchema = new mongoose.Schema({
         }
     ],
     description:{
+        type: String,
+        required: false
+    },
+    dateStart: {
+        type: String,
+        required: false
+    },
+    dateEnd: {
         type: String,
         required: false
     }

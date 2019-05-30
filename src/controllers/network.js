@@ -3,10 +3,15 @@
 var Network = require('../models/network');
 
 function saveNetwork(req, res){
-    var params = req.body;
-    var network = new Network(params);
+    const { career, dateStart, dateEnd } = req.body;
+    var network = new Network(req.body);
 
-    Network.findOne({description:params.description}, (err, networks) => {
+    Network.findOne({
+        $or: [
+            { career: career },
+            { dateStart: dateStart },
+            { dateEnd: dateEnd }
+        ]}, (err, networks) => {
         if(err){
             res.status(500).send({message: err});
         }else{
@@ -36,10 +41,10 @@ function listNetwork(req, res){
 }
 
 function addClasses(req, res){
-    const { id, son } = req.params;
+    const { id, course } = req.params;
 
     Network.findById(id, (err, UpdateNetwork) => {
-      UpdateNetwork.classes.push(son);
+      UpdateNetwork.classes.push(course);
       UpdateNetwork.save().then((networkSaved) => {
         res.status(200).send({networkSaved});
       }).catch((err) => res.status(500).send({ err }));
