@@ -8,7 +8,8 @@ function saveNetwork(req, res){
 
     Network.findOne({
         $or: [
-            { career: career },
+            // @TODO fix this.pls
+            // { career: career },
             { dateStart: dateStart },
             { dateEnd: dateEnd }
         ]}, (err, networks) => {
