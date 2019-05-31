@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "e1acccfa-c2b8-41ea-bd66-632bf0d46178",
+		"_postman_id": "edff2dcd-25e0-40e1-9321-a4e04edc558b",
 		"name": "SchoolManager",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -253,7 +253,330 @@
 		},
 		{
 			"name": "Family",
-			"item": []
+			"item": [
+				{
+					"name": "Save Family",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "father",
+									"value": "5cc31f50afbd8715881f3d4a",
+									"type": "text"
+								},
+								{
+									"key": "mother",
+									"value": "5ccd9e8a19a3482dd4e7c024",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:4022/v1/families/",
+							"host": [
+								"localhost"
+							],
+							"port": "4022",
+							"path": [
+								"v1",
+								"families",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Families",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:4022/v1/families/",
+							"host": [
+								"localhost"
+							],
+							"port": "4022",
+							"path": [
+								"v1",
+								"families",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Save Son",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "firstBorn",
+									"value": "5cca16c4ec7c5a32c81e3141",
+									"type": "text"
+								},
+								{
+									"key": "secondBorn",
+									"value": "5cca16c4ec7c5a32c81e3141",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:4022/v1/families/5cd6cd6849cc591a307c61de/addSon/5cc31f2aafbd8715881f3d49",
+							"host": [
+								"localhost"
+							],
+							"port": "4022",
+							"path": [
+								"v1",
+								"families",
+								"5cd6cd6849cc591a307c61de",
+								"addSon",
+								"5cc31f2aafbd8715881f3d49"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Family get person",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:4022/v1/families/5cd6d9ea927b7d13acf3fff9/names",
+							"host": [
+								"localhost"
+							],
+							"port": "4022",
+							"path": [
+								"v1",
+								"families",
+								"5cd6d9ea927b7d13acf3fff9",
+								"names"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Careers",
+			"item": [
+				{
+					"name": "Save Careers",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "code",
+									"value": "1231345",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "sgdfgsfdgsfg",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "ggggg",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:4022/v1/career/",
+							"host": [
+								"localhost"
+							],
+							"port": "4022",
+							"path": [
+								"v1",
+								"career",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Academic Unity",
+			"item": [
+				{
+					"name": "Save Academic Unity",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "description",
+									"value": "fff",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:4022/v1/academicUnity",
+							"host": [
+								"localhost"
+							],
+							"port": "4022",
+							"path": [
+								"v1",
+								"academicUnity"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Academic Unity",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:4022/v1/academicUnity/",
+							"host": [
+								"localhost"
+							],
+							"port": "4022",
+							"path": [
+								"v1",
+								"academicUnity",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Course",
+			"item": [
+				{
+					"name": "List Courses",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:4022/v1/course",
+							"host": [
+								"localhost"
+							],
+							"port": "4022",
+							"path": [
+								"v1",
+								"course"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Save Course",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "code",
+									"value": "dfdffd",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "mmmmmmmmmmmm",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:4022/v1/courses/",
+							"host": [
+								"localhost"
+							],
+							"port": "4022",
+							"path": [
+								"v1",
+								"courses",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	],
 	"event": [

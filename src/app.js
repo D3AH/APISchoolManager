@@ -13,7 +13,9 @@ var routes = {
 	phones: require('./routes/phones'),
 	academicUnity: require('./routes/academicUnity'),
 	career: require('./routes/career'),
-	course: require('./routes/course')
+	course: require('./routes/course'),
+	network: require('./routes/network'),
+	teacher: require('./routes/teacher')
 };
 
 app.use((req, res, next) => {
@@ -35,5 +37,7 @@ app.use('/v1/phones', routes.phones);
 app.use('/v1/academicUnity', routes.academicUnity);
 app.use('/v1/careers', routes.career);
 app.use('/v1/courses', routes.course);
+app.use('/v1/network', routes.network);
+app.use('/v1/teacher', routes.teacher);
 
 module.exports = app;
