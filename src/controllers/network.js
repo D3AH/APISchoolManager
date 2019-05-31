@@ -3,7 +3,6 @@
 var Network = require('../models/network');
 
 function saveNetwork(req, res){
-    throw 'error';
     const { career, dateStart, dateEnd } = req.body;
     var network = new Network(req.body);
 
