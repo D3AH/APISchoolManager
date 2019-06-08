@@ -5,6 +5,11 @@ var Daytime = require('../models/daytime');
 function saveDaytime(req, res){
     var params = req.body;
     var daytime = new Daytime(params);
+    Daytime.findOne({$or: [{section:params.section.daytime}]}, (err, instruct) => {
+      if(err){
+          res.status(500).send({message: err});
+      }else{
+          if(!instruct){
     daytime.save((err, daytimeStored) => {
       if(err){
         res.status(500).send({ message: err });
@@ -16,6 +21,11 @@ function saveDaytime(req, res){
             }
           }
       });
+    } else {
+      res.status(404).send({ message: 'Ya existe!' });
+    }
+  }
+});
 }  
 
 function listDaytime(req, res){
