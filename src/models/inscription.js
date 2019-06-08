@@ -3,12 +3,14 @@ const mongoose = require('mongoose');
 const ObjectId = mongoose.Schema.ObjectId;
 
 const InscriptionSchema = new mongoose.Schema({
-    student: {
+    person: {
         type: ObjectId,
+        ref: 'Person',
         required: false
     },
     academicUnity: {
         type: ObjectId,
+        ref: 'AcademicUnity',
         required: false
     },
     grade: {
