@@ -15,7 +15,8 @@ var routes = {
 	career: require('./routes/career'),
 	course: require('./routes/course'),
 	network: require('./routes/network'),
-	teacher: require('./routes/teacher')
+	teacher: require('./routes/teacher'),
+	daytime: require('./routes/daytime') 
 };
 
 app.use((req, res, next) => {
@@ -39,5 +40,6 @@ app.use('/v1/careers', routes.career);
 app.use('/v1/courses', routes.course);
 app.use('/v1/networks', routes.network);
 app.use('/v1/teacher', routes.teacher);
+app.use('/v1/daytime', routes.daytime);
 
 module.exports = app;

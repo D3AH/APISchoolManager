@@ -4,7 +4,7 @@ const ObjectId = mongoose.Schema.ObjectId;
 
 const DaytimeSchema = new mongoose.Schema({
     career: {
-        type: Id,
+        type: ObjectId,
         required: false
     },
     daytime: {

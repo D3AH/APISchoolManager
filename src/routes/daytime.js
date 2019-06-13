@@ -8,9 +8,11 @@ var api = express.Router();
 /**
  * GET
  */
+api.get('/', DayTimeController.listDaytime);
 
 /**
  * POST
  */
+api.post('/', DayTimeController.saveDaytime);
 
 module.exports = api;
