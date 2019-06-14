@@ -6,7 +6,7 @@ function saveDaytime(req, res){
   var params = req.body;
   var daytime = new Daytime(params);
 
-  Daytime.findOne({ section: params.section, daytime: params.daytime }, (err, instruct) => {
+  Daytime.findOne({ career: params.career, section: params.section, daytime: params.daytime }, (err, instruct) => {
     if(err) {
         res.status(500).send({message: err});
     } else {
