@@ -15,4 +15,9 @@ api.get('/', CourseController.listCourse);
  */
 api.post('/', CourseController.saveCourse);
 
+/**
+ * PUT
+ */
+api.put('/:id/teacher/:teacher', CourseController.addTeacher);
+
 module.exports = api;

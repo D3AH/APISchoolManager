@@ -38,7 +38,19 @@ function listCourse(req, res){
     })
 }
 
+function addTeacher(req, res) {
+    const { id, teacher } = req.params;
+
+    Course.findById(id, (err, UpdateCourse) => {
+        UpdateCourse.teachers.push(teacher);
+        UpdateCourse.save().then((CourseSaved) => {
+            res.status(200).send({CourseSaved});
+        });
+    });
+}
+
 module.exports = {
     saveCourse,
-    listCourse
+    listCourse,
+    addTeacher
 }
