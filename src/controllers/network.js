@@ -43,12 +43,22 @@ function listNetwork(req, res){
 
 function addClasses(req, res){
     const { id, course } = req.params;
-
     Network.findById(id, (err, UpdateNetwork) => {
-      UpdateNetwork.classes.push(course);
-      UpdateNetwork.save().then((networkSaved) => {
-        res.status(200).send({networkSaved});
-      }).catch((err) => res.status(500).send({ err }));
+        var idkjs = false;
+        UpdateNetwork.courses.some((id) => {
+                idkjs = id == course;
+                return idkjs;
+        });
+        if(!idkjs) {
+            UpdateNetwork.courses.push(course);
+            UpdateNetwork.save().then((networkSaved) => {
+                return res.status(200).send({networkSaved});
+            }).catch((err) => res.status(500).send({ err }));
+        } else {
+            return res.status(500).send({
+                message: 'The course you are trying to add has been found in the db'
+            });
+        }
     });
 }
 
