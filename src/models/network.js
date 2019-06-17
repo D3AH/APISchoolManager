@@ -5,7 +5,7 @@ const ObjectId = mongoose.Schema.ObjectId;
 const NetworkSchema = new mongoose.Schema({
     career: {
         type: ObjectId,
-        required: true
+        required: false
     },
     courses: [
         {
@@ -15,11 +15,11 @@ const NetworkSchema = new mongoose.Schema({
     ],
     grade:{
         type: String,
-        required: true
+        required: false
     },
     description:{
         type: String,
-        required: true
+        required: false
     },
     dateStart: {
         type: String,
