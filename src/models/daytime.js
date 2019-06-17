@@ -15,7 +15,16 @@ const DaytimeSchema = new mongoose.Schema({
     {
         type: String,
         required: false
+    },
+    courses:{
+        type: ObjectId,
+        required: false
+    },
+    grade:{
+        type: String,
+        required: false
     }
+
 });
 
 module.exports = mongoose.model('DaytimeSchema', DaytimeSchema);

@@ -3,20 +3,31 @@
 var Daytime = require('../models/daytime');
 
 function saveDaytime(req, res){
-    var params = req.body;
-    var daytime = new Daytime(params);
-    daytime.save((err, daytimeStored) => {
-      if(err){
-        res.status(500).send({ message: err });
-        }else{
-          if(!daytimeStored){
-            res.status(404).send({message: 'no se pudo registrar'});
+  var params = req.body;
+  var daytime = new Daytime(params);
+
+  Daytime.findOne({ career: params.career, section: params.section, daytime: params.daytime }, (err, instruct) => {
+    if(err) {
+        res.status(500).send({message: err});
+    } else {
+      if(!instruct) {
+        daytime.save((err, daytimeStored) => {
+          if(err) {
+            res.status(500).send({ message: err });
+          } else {
+            if(!daytimeStored){
+              res.status(404).send({message: 'no se pudo registrar'});
             }else{
               res.status(200).send({phones: daytimeStored});
             }
           }
-      });
-}  
+        });
+      } else {
+        res.status(404).send({ message: 'Ya existe!' });
+      }
+    }
+  });
+}
 
 function listDaytime(req, res){
     Daytime.find({}, (err, daytimeListed) => {
