@@ -11,7 +11,19 @@ const InscriptionSchema = new mongoose.Schema({
         type: ObjectId,
         required: false
     },
+    career: {
+        type: String,
+        required: false
+    },
+    daytime: {
+        type: String,
+        required: false
+    },
     grade: {
+        type: String,
+        required: false
+    },
+    section: {
         type: String,
         required: false
     },
