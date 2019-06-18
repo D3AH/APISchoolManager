@@ -13,7 +13,19 @@ const InscriptionSchema = new mongoose.Schema({
         ref: 'AcademicUnity',
         required: false
     },
+    career: {
+        type: String,
+        required: false
+    },
+    daytime: {
+        type: String,
+        required: false
+    },
     grade: {
+        type: String,
+        required: false
+    },
+    section: {
         type: String,
         required: false
     },
