@@ -27,7 +27,7 @@ function loginUser(req, res) {
         if(user) {
             bcrypt.compare(password, user.password, (err, check) => {
                 if(check) {
-                    res.status(500).send(user);
+                    res.status(200).send(user);
                 } else {
                     res.status(500).send({ message: 'Incorrect authentication.' });
                 }

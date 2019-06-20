@@ -10,6 +10,6 @@ var api = express.Router();
  */
 api.post('/', UserController.loginUser);
 
-api.post('/user', UserController.signUp);
+api.post('/register', UserController.signUp);
 
 module.exports = api;
