@@ -17,7 +17,8 @@ var routes = {
 	network: require('./routes/network'),
 	teacher: require('./routes/teacher'),
 	daytime: require('./routes/daytime'),
-	inscription: require('./routes/inscription')
+	inscription: require('./routes/inscription'),
+	user: require('./routes/user'),
 };
 
 app.use((req, res, next) => {
@@ -43,5 +44,6 @@ app.use('/v1/networks', routes.network);
 app.use('/v1/teacher', routes.teacher);
 app.use('/v1/daytime', routes.daytime);
 app.use('/v1/inscription', routes.inscription);
+app.use('/v1/user', routes.user);
 
 module.exports = app;
