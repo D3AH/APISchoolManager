@@ -13,6 +13,10 @@ const NetworkSchema = new mongoose.Schema({
             required: false
         }
     ],
+    grade:{
+        type: String,
+        required: true
+    },
     description:{
         type: String,
         required: true
