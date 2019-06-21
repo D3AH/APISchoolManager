@@ -23,7 +23,7 @@ const UserSchema = new mongoose.Schema({
     /**
      * Role of user.
      */
-    rol: {
+    role: {
         type: String,
         required: false,
         default: 'ROLE_SECRETARIA'
