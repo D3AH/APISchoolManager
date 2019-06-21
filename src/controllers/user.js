@@ -51,7 +51,6 @@ function loginUser(req, res) {
 
 function signUp(req, res) {
     var tempUser = new User(req.body);
-    tempUser.role = 'ROLE_CLIENT';
     var validate = tempUser.validateSync();
 
     if(!validate) {
